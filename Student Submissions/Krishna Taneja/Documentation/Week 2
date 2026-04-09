@@ -1,0 +1,103 @@
+# 🚗 Week 2: Data Cleaning
+
+## 🔹 1. Introduction
+
+Data cleaning is the process of identifying and correcting errors, inconsistencies, and missing values in a dataset. Real-world datasets often contain incomplete or noisy data, which can affect the accuracy of analysis.
+
+In the RoadSafe Analytics project, data cleaning ensures that accident data is reliable and suitable for further analysis.
+
+---
+
+## 🔹 2. Role in This Project
+
+Data cleaning plays a crucial role in this project by:
+
+* Removing missing or null values
+* Fixing incorrect data formats
+* Eliminating duplicate records
+* Standardizing categorical data (e.g., weather conditions)
+
+---
+
+## 🔹 3. Common Issues in Dataset
+
+During analysis of the US Accidents Dataset, the following issues may be found:
+
+* Missing values in weather or visibility columns
+* Incorrect data types (e.g., date stored as string)
+* Duplicate rows
+* Inconsistent values (e.g., "Rain", "rain", "RAIN")
+
+---
+
+## 🔹 4. Data Cleaning Steps
+
+### 📌 Step 1: Handle Missing Values
+
+* Remove rows with too many missing values
+* Fill missing values if required
+
+### 📌 Step 2: Convert Data Types
+
+* Convert time columns into datetime format
+
+### 📌 Step 3: Remove Duplicates
+
+* Drop duplicate records
+
+### 📌 Step 4: Standardize Data
+
+* Convert categorical values to consistent format
+
+---
+
+## 🔹 5. Implementation
+
+```python id="8e6x8y"
+import pandas as pd
+
+# Load dataset
+df = pd.read_excel("road_accidents_dataset.xlsx")
+
+# Convert Start_Time to datetime
+df['Start_Time'] = pd.to_datetime(df['Start_Time'])
+
+# Remove duplicate rows
+df = df.drop_duplicates()
+
+# Handle missing values
+df = df.dropna()
+
+# Standardize text data (example: weather condition)
+df['Weather_Condition'] = df['Weather_Condition'].str.lower()
+
+# Check cleaned data
+print(df.info())
+print(df.isnull().sum())
+```
+
+---
+
+## 🔹 6. Observations
+
+* Missing values were removed successfully
+* Dataset became more consistent
+* Data types are now correct for analysis
+* Duplicate records were eliminated
+
+---
+
+## 🔹 7. Importance in Project
+
+Data cleaning is important because:
+
+* It improves data quality
+* It prevents incorrect analysis results
+* It ensures consistency in visualization
+* It makes the dataset reliable
+
+---
+
+## 🔹 8. Conclusion
+
+Data cleaning is a critical step in the data analysis pipeline. By cleaning the dataset, we ensure accurate and meaningful insights for understanding road accident patterns and improving road safety.

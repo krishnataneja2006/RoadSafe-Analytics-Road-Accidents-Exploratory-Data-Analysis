@@ -1,0 +1,180 @@
+# 🚗 RoadSafe Analytics: Road Accidents - Exploratory Data Analysis (EDA)
+
+## 📌 Project Overview
+
+The goal of this project is to analyze road accident data to identify patterns, trends, and key factors affecting accident severity. The analysis is performed using Python and Power BI to generate meaningful insights and visualizations.
+
+---
+
+## 🎯 Objectives
+
+* Analyze accident trends based on time, location, and weather
+* Understand factors affecting accident severity
+* Perform data cleaning and preprocessing
+* Create visualizations and dashboards
+* Provide insights for improving road safety
+
+---
+
+## 📂 Dataset
+
+We used the **US Accidents Dataset (Kaggle)**, which contains information about:
+
+* Time of accidents
+* Location (city, state)
+* Severity levels
+* Weather conditions
+* Road and traffic features
+
+---
+
+## 🛠️ Tools & Technologies Used
+
+* Python (Pandas, Matplotlib, Seaborn)
+* Power BI
+* VS Code
+* Excel
+
+---
+
+# 📅 Weekly Work Summary
+
+## 🔹 Week 1: Dataset Acquisition & Exploration
+
+* Collected dataset from Kaggle
+* Explored dataset structure and features
+* Checked data types and missing values
+
+---
+
+## 🔹 Week 2: Data Cleaning
+
+* Removed missing and duplicate values
+* Converted date-time columns
+* Standardized categorical data
+
+---
+
+## 🔹 Week 3: Exploratory Data Analysis (EDA)
+
+* Analyzed accidents by hour and day
+* Studied severity distribution
+* Evaluated weather impact
+* Identified key patterns
+
+---
+
+## 🔹 Week 4: Data Modeling
+
+* Created new features (Hour, Day, Month)
+* Categorized severity levels
+* Structured dataset for analysis
+
+---
+
+## 🔹 Week 5: Geospatial Analysis
+
+* Analyzed location-based accident data
+* Identified accident hotspots
+* Used map-based visualization
+
+---
+
+## 🔹 Week 6: DAX (Power BI)
+
+* Created measures like total accidents
+* Calculated average severity
+* Built dynamic calculations
+
+---
+
+## 🔹 Week 7: Data Visualization
+
+* Created charts (bar, line, pie)
+* Built interactive dashboard in Power BI
+* Presented insights visually
+
+---
+
+# 📊 Dashboard
+
+A Power BI dashboard was created to visualize:
+
+* Accident trends over time
+* Severity distribution
+* Weather impact
+* Location-based analysis
+
+![Road Safe analytics Dashboard](D1.png)
+
+
+![Accidents Prevention Dashboard](D2.png)
+
+---
+
+# 🧠 Key Insights
+
+* Accidents peak during rush hours
+* Weather conditions like rain and fog increase accidents
+* Most accidents are moderate in severity
+* Urban areas have higher accident frequency
+
+---
+
+# 💡 Conclusion
+
+This project helped in understanding real-world accident data and extracting meaningful insights using EDA techniques. The findings can support better road safety planning and awareness.
+
+---
+
+# 🎤 Viva Questions & Answers
+
+### ❓ What is EDA?
+
+EDA is the process of analyzing and visualizing data to discover patterns and insights.
+
+---
+
+### ❓ Why is data cleaning important?
+
+It removes errors and ensures accurate analysis.
+
+---
+
+### ❓ What is severity in this dataset?
+
+It represents how serious an accident is, ranging from 1 (low) to 4 (high).
+
+---
+
+### ❓ Why use Power BI?
+
+Power BI helps create interactive dashboards and visualize data effectively.
+
+---
+
+### ❓ What is DAX?
+
+DAX is a formula language used in Power BI for calculations and data analysis.
+
+---
+
+### ❓ What insights did you find?
+
+Accidents increase during peak hours and bad weather conditions.
+
+---
+
+# 🚀 Future Improvements
+
+* Use machine learning to predict accidents
+* Include real-time traffic data
+* Expand dataset for more accuracy
+
+---
+
+# 👨‍💻 Author
+
+Krishna Taneja
+B.Tech CSE (2nd Year)
+Lovely Professional University

@@ -1,0 +1,110 @@
+# 🚗 Week 4: Data Modeling
+
+## 🔹 1. Introduction
+
+Data modeling is the process of organizing and structuring data to make it suitable for analysis. It involves transforming raw data into meaningful formats, creating relationships between variables, and preparing features for better insights.
+
+In the RoadSafe Analytics project, data modeling helps in simplifying complex accident data and making it ready for visualization and interpretation.
+
+---
+
+## 🔹 2. Role in This Project
+
+Data modeling is used to:
+
+* Create new features from existing data
+* Structure data for analysis and visualization
+* Identify relationships between variables
+* Improve data usability for insights
+
+---
+
+## 🔹 3. Key Concepts Used
+
+### 📌 Feature Engineering
+
+* Extracting useful information from existing data
+* Example: Extracting hour, day, and month from time
+
+### 📌 Data Transformation
+
+* Converting data into required formats
+* Example: categorizing severity levels
+
+### 📌 Data Structuring
+
+* Organizing dataset for better readability and analysis
+
+---
+
+## 🔹 4. Data Modeling Steps
+
+### 📊 Step 1: Feature Creation
+
+* Extract Hour, Day, Month from time
+
+### 📊 Step 2: Categorization
+
+* Group severity levels into categories (Low, Medium, High)
+
+### 📊 Step 3: Data Transformation
+
+* Convert categorical data into numerical format if needed
+
+---
+
+## 🔹 5. Implementation
+
+```python id="f3a9kd"
+import pandas as pd
+
+# Load dataset
+df = pd.read_excel("road_accidents_dataset.xlsx")
+
+# Convert time column
+df['Start_Time'] = pd.to_datetime(df['Start_Time'])
+
+# Feature Engineering
+df['Hour'] = df['Start_Time'].dt.hour
+df['Day'] = df['Start_Time'].dt.day_name()
+df['Month'] = df['Start_Time'].dt.month
+
+# Categorize Severity
+def severity_level(x):
+    if x <= 2:
+        return "Low"
+    elif x == 3:
+        return "Medium"
+    else:
+        return "High"
+
+df['Severity_Level'] = df['Severity'].apply(severity_level)
+
+# Display updated dataset
+print(df.head())
+```
+
+---
+
+## 🔹 6. Observations
+
+* New features like Hour, Day, and Month were successfully created
+* Severity levels are now easier to interpret
+* Dataset is more structured and analysis-ready
+
+---
+
+## 🔹 7. Importance in Project
+
+Data modeling is important because:
+
+* It improves data understanding
+* It simplifies complex datasets
+* It enhances visualization and analysis
+* It helps in extracting meaningful insights
+
+---
+
+## 🔹 8. Conclusion
+
+Data modeling transforms raw accident data into a structured and meaningful format. It plays a vital role in improving analysis efficiency and supports better decision-making in road safety analytics.

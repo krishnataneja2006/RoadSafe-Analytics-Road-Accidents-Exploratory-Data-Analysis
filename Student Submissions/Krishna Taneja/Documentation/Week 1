@@ -1,0 +1,103 @@
+# 🚗 Week 1: Dataset Acquisition and Exploration
+
+## 🔹 1. Introduction
+
+Dataset acquisition and exploration is the first step in any data analysis project. It involves collecting a reliable dataset and understanding its structure, features, and overall characteristics before performing analysis.
+
+In this project, we use the US Accidents Dataset, which contains detailed information about road accidents including time, location, severity, weather conditions, and road features.
+
+---
+
+## 🔹 2. Dataset Acquisition
+
+The dataset was obtained from Kaggle, a platform that provides real-world datasets for analysis.
+
+### 📥 Steps:
+
+* Visit Kaggle website
+* Search for **US Accidents Dataset**
+* Download the dataset (CSV format)
+* Load it into the working environment (Python / VS Code)
+
+---
+
+## 🔹 3. Dataset Description
+
+The dataset includes multiple attributes:
+
+| Column Name       | Description                             |
+| ----------------- | --------------------------------------- |
+| ID                | Unique accident identifier              |
+| Start_Time        | Accident start time                     |
+| End_Time          | Accident end time                       |
+| City / State      | Location of accident                    |
+| Severity          | Accident severity (1–4)                 |
+| Weather_Condition | Weather during accident                 |
+| Temperature       | Temperature at that time                |
+| Humidity          | Humidity level                          |
+| Visibility        | Visibility distance                     |
+| Road_Condition    | Dry or wet road                         |
+| Traffic_Signal    | Presence of traffic signal              |
+| Junction          | Whether accident occurred near junction |
+
+---
+
+## 🔹 4. Data Exploration
+
+Exploration helps us understand the dataset before analysis.
+
+### 📌 Key Tasks:
+
+* View first few rows
+* Check data types
+* Identify missing values
+* Understand distribution of data
+
+---
+
+## 🔹 5. Implementation
+
+```python
+import pandas as pd
+
+# Load dataset
+df = pd.read_excel("road_accidents_dataset.xlsx")
+
+# Display first 5 rows
+print(df.head())
+
+# Check dataset structure
+print(df.info())
+
+# Summary statistics
+print(df.describe())
+
+# Check missing values
+print(df.isnull().sum())
+```
+
+---
+
+## 🔹 6. Observations
+
+* Dataset contains multiple features related to accidents
+* Data includes both numerical and categorical values
+* Some columns may contain missing values
+* Time-based columns require conversion for analysis
+
+---
+
+## 🔹 7. Importance in Project
+
+Dataset exploration is important because:
+
+* It helps in understanding data structure
+* It identifies issues like missing values
+* It prepares data for further analysis
+* It ensures accurate results in later stages
+
+---
+
+## 🔹 8. Conclusion
+
+Dataset acquisition and exploration form the foundation of the project. Proper understanding of the dataset ensures effective analysis and meaningful insights in later stages of the RoadSafe Analytics project.

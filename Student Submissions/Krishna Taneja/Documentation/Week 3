@@ -1,0 +1,130 @@
+# 🚗 Week 3: Exploratory Data Analysis (EDA)
+
+## 🔹 1. Introduction
+
+Exploratory Data Analysis (EDA) is the process of analyzing and visualizing data to understand patterns, trends, and relationships. It helps in extracting meaningful insights before applying advanced techniques.
+
+In the RoadSafe Analytics project, EDA is used to identify accident patterns based on time, location, weather, and severity.
+
+---
+
+## 🔹 2. Role in This Project
+
+EDA helps in:
+
+* Understanding accident distribution over time
+* Identifying high-risk conditions (weather, visibility)
+* Analyzing accident severity levels
+* Detecting patterns and trends in the dataset
+
+---
+
+## 🔹 3. Key Analysis Performed
+
+### 📊 1. Accidents by Hour
+
+* To identify peak accident times
+
+### 📊 2. Accidents by Day
+
+* To compare weekdays vs weekends
+
+### 📊 3. Severity Distribution
+
+* To analyze how serious accidents are
+
+### 📊 4. Weather Impact
+
+* To understand how weather affects accidents
+
+### 📊 5. Location Analysis
+
+* To find accident-prone areas
+
+---
+
+## 🔹 4. Implementation
+
+```python id="1k9v0p"
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load dataset
+df = pd.read_excel("road_accidents_dataset.xlsx")
+
+# Convert to datetime
+df['Start_Time'] = pd.to_datetime(df['Start_Time'])
+
+# Create new features
+df['Hour'] = df['Start_Time'].dt.hour
+df['Day'] = df['Start_Time'].dt.day_name()
+
+# Accidents by hour
+sns.countplot(x='Hour', data=df)
+plt.title("Accidents by Hour")
+plt.show()
+
+# Severity distribution
+sns.countplot(x='Severity', data=df)
+plt.title("Severity Distribution")
+plt.show()
+
+# Weather condition analysis
+df['Weather_Condition'].value_counts().plot(kind='bar')
+plt.title("Weather Impact on Accidents")
+plt.show()
+```
+
+---
+
+## 🔹 5. Visual Insights
+
+### 📈 Accidents by Time
+
+![Image](https://desktop.arcgis.com/en/analytics/case-studies/GUID-9D55A15C-0660-4447-8971-7EF6DAF50A6B-web.png)
+
+👉 Peak accidents occur during morning and evening rush hours.
+
+---
+
+### 📊 Severity Distribution
+
+
+![Image](https://blog.invgate.com/hs-fs/hubfs/how-to-build-an-incident-prioritization-matrix.jpg?height=1683\&name=how-to-build-an-incident-prioritization-matrix.jpg\&width=2000)
+
+👉 Most accidents fall under moderate severity levels.
+
+---
+
+### 🌧️ Weather Impact
+
+![Image](https://www.mdpi.com/atmosphere/atmosphere-14-00960/article_deploy/html/images/atmosphere-14-00960-g004.png)
+
+👉 Rain and fog significantly increase accident frequency.
+
+---
+
+## 🔹 6. Observations
+
+* Accidents are more frequent during peak traffic hours
+* Weather conditions like rain and fog increase risk
+* Most accidents are moderate rather than extreme
+* Urban areas show higher accident density
+
+---
+
+## 🔹 7. Importance in Project
+
+EDA is important because:
+
+* It reveals hidden patterns in data
+* It helps in making data-driven decisions
+* It supports visualization and storytelling
+* It forms the base for further analysis
+
+---
+
+## 🔹 8. Conclusion
+
+Exploratory Data Analysis provides valuable insights into accident trends and contributing factors. These findings help in understanding accident behavior and support better road safety planning.

@@ -1,0 +1,125 @@
+# 🚗 Week 6: DAX (Data Analysis Expressions)
+
+## 🔹 1. Introduction
+
+DAX (Data Analysis Expressions) is a formula language used in Power BI for data modeling and analysis. It is used to create calculated columns, measures, and custom calculations for better insights.
+
+In the RoadSafe Analytics project, DAX is used to calculate accident statistics, analyze severity, and create dynamic reports in Power BI.
+
+---
+
+## 🔹 2. Role in This Project
+
+DAX helps in:
+
+* Creating calculated measures (e.g., total accidents)
+* Analyzing accident severity
+* Performing time-based analysis
+* Building interactive dashboards
+
+---
+
+## 🔹 3. Key Concepts Used
+
+### 📌 Calculated Columns
+
+* Created row-wise
+* Example: Categorizing severity
+
+### 📌 Measures
+
+* Aggregated calculations
+* Example: Total accidents
+
+### 📌 Time Intelligence
+
+* Analyze data based on time (month, day, etc.)
+
+---
+
+## 🔹 4. Common DAX Functions Used
+
+* `SUM()` → Total values
+* `COUNT()` → Count of rows
+* `CALCULATE()` → Modify filters
+* `IF()` → Conditional logic
+* `AVERAGE()` → Average values
+
+---
+
+## 🔹 5. Implementation (Power BI)
+
+### 📊 1. Total Accidents Measure
+
+```DAX id="dax1"
+Total_Accidents = COUNT('Road_Accidents'[ID])
+```
+
+---
+
+### 📊 2. Average Severity
+
+```DAX id="dax2"
+Average_Severity = AVERAGE('Road_Accidents'[Severity])
+```
+
+---
+
+### 📊 3. High Severity Accidents
+
+```DAX id="dax3"
+High_Severity_Count = CALCULATE(
+    COUNT('Road_Accidents'[ID]),
+    'Road_Accidents'[Severity] >= 3
+)
+```
+
+---
+
+### 📊 4. Severity Category Column
+
+```DAX id="dax4"
+Severity_Level = IF(
+    'Road_Accidents'[Severity] <= 2,
+    "Low",
+    IF('Road_Accidents'[Severity] = 3, "Medium", "High")
+)
+```
+
+---
+
+### 📊 5. Accidents by Month
+
+```DAX id="dax5"
+Accidents_By_Month = 
+CALCULATE(
+    COUNT('Road_Accidents'[ID]),
+    ALLEXCEPT('Road_Accidents', 'Road_Accidents'[Month])
+)
+```
+
+---
+
+## 🔹 6. Observations
+
+* DAX enables dynamic calculations in dashboards
+* Measures update automatically based on filters
+* Helps in creating meaningful KPIs
+* Improves decision-making through interactive visuals
+
+---
+
+## 🔹 7. Importance in Project
+
+DAX is important because:
+
+* It enhances Power BI capabilities
+* It allows advanced data analysis
+* It creates interactive and dynamic reports
+* It simplifies complex calculations
+
+---
+
+## 🔹 8. Conclusion
+
+DAX plays a crucial role in transforming raw data into meaningful insights within Power BI. It enables advanced calculations and supports interactive dashboard creation for better understanding of road accident patterns.

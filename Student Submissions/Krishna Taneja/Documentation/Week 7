@@ -1,0 +1,124 @@
+# 🚗 Week 7: Data Visualization
+
+## 🔹 1. Introduction
+
+Data visualization is the process of representing data using charts, graphs, and dashboards to make information easy to understand. It helps in identifying patterns, trends, and insights visually.
+
+In the RoadSafe Analytics project, visualization is used to present accident data in a clear and interactive way for better decision-making.
+
+---
+
+## 🔹 2. Role in This Project
+
+Data visualization helps in:
+
+* Understanding accident patterns easily
+* Comparing accident trends over time
+* Highlighting high-risk conditions
+* Presenting insights in an interactive format
+
+---
+
+## 🔹 3. Types of Visualizations Used
+
+### 📊 Bar Chart
+
+* Used for comparing accident counts (e.g., by severity, weather)
+
+### 📈 Line Chart
+
+* Used for time-based trends (e.g., accidents by hour or month)
+
+### 🥧 Pie Chart
+
+* Used for showing proportion (e.g., severity distribution)
+
+### 🗺️ Map Visualization
+
+* Used for location-based accident analysis
+
+---
+
+## 🔹 4. Visual Representations
+
+### 📊 Accident Trends
+
+
+![Image](https://media.licdn.com/dms/image/v2/D4E12AQGAg1NYnN_9Mg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1689011398698?e=2147483647\&t=bw10BaJDm3MPkE0SJLb34pcrEYMBokDD85mU0IDLT4w\&v=beta)
+
+👉 Shows how accidents vary over time.
+
+---
+
+## 🔹 5. Implementation (Python)
+
+```python id="viz123"
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load dataset
+df = pd.read_excel("road_accidents_dataset.xlsx")
+
+# Convert time column
+df['Start_Time'] = pd.to_datetime(df['Start_Time'])
+
+# Extract hour
+df['Hour'] = df['Start_Time'].dt.hour
+
+# Line chart: accidents by hour
+df['Hour'].value_counts().sort_index().plot(kind='line')
+plt.title("Accidents by Hour")
+plt.xlabel("Hour")
+plt.ylabel("Number of Accidents")
+plt.show()
+
+# Bar chart: severity distribution
+sns.countplot(x='Severity', data=df)
+plt.title("Severity Distribution")
+plt.show()
+
+# Pie chart: weather condition
+df['Weather_Condition'].value_counts().plot(kind='pie', autopct='%1.1f%%')
+plt.title("Weather Conditions")
+plt.show()
+```
+
+---
+
+## 🔹 6. Dashboard Creation (Power BI)
+
+In Power BI, the following visuals were created:
+
+* 📊 Bar chart for severity
+* 📈 Line chart for time trends
+* 🥧 Pie chart for weather conditions
+* 🗺️ Map for accident locations
+
+These visuals help users interact with data using filters and slicers.
+
+---
+
+## 🔹 7. Observations
+
+* Visualizations make patterns easier to understand
+* Peak accident times are clearly visible
+* Weather impact can be easily identified
+* High-risk areas can be detected using maps
+
+---
+
+## 🔹 8. Importance in Project
+
+Data visualization is important because:
+
+* It simplifies complex data
+* It improves communication of insights
+* It supports decision-making
+* It enhances presentation quality
+
+---
+
+## 🔹 9. Conclusion
+
+Data visualization is the final step in the analysis process, transforming data into meaningful insights. It helps in effectively communicating findings and supports better strategies for improving road safety.

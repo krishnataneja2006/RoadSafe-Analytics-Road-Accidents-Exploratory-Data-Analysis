@@ -1,0 +1,99 @@
+# 🚗 Week 5: Geospatial Analysis
+
+## 🔹 1. Introduction
+
+Geospatial analysis involves analyzing data that has a geographical or location-based component such as latitude and longitude. It helps in visualizing and identifying patterns across different locations.
+
+In the RoadSafe Analytics project, geospatial analysis is used to identify accident-prone areas and understand how location influences accident frequency and severity.
+
+---
+
+## 🔹 2. Role in This Project
+
+Geospatial analysis helps in:
+
+* Identifying accident hotspots
+* Understanding regional accident distribution
+* Visualizing accidents on maps
+* Supporting location-based decision making
+
+---
+
+## 🔹 3. Key Concepts Used
+
+### 📌 Latitude & Longitude
+
+* Used to represent exact accident location
+
+### 📌 Heatmaps
+
+* Show density of accidents in specific regions
+
+### 📌 Spatial Distribution
+
+* Helps compare accident frequency across cities/states
+
+---
+
+## 🔹 4. Geospatial Visualization
+
+### 🗺️ Accident Hotspot Mapping
+
+![Image](https://www.researchgate.net/publication/350105108/figure/fig3/AS%3A1002186972622849%401615951402693/Heatmap-to-show-concentration-of-incidents-in-an-area-This-figure-is-a-zoomed-version-of.ppm)
+
+![Image](https://www.researchgate.net/publication/356121082/figure/fig2/AS%3A1089072491708425%401636666524157/Heat-map-of-accident-hotspots-Note-This-map-shows-road-traffic-crashes-as-a-percentage.jpg)
+
+![Image](https://www.researchgate.net/publication/330420317/figure/fig2/AS%3A11431281390250552%401745259401350/A-heat-map-matrix-visualization-for-traffic-congestion-analysis-21A-heat-map-matrix.tif)
+
+👉 Heatmaps help in identifying areas with high accident concentration.
+
+---
+
+## 🔹 5. Implementation
+
+```python id="geo123"
+import pandas as pd
+import folium
+from folium.plugins import HeatMap
+
+# Load dataset
+df = pd.read_excel("road_accidents_dataset.xlsx")
+
+# Create base map (example coordinates)
+map_center = [37.77, -122.42]
+m = folium.Map(location=map_center, zoom_start=5)
+
+# Add heatmap
+heat_data = [[row['Latitude'], row['Longitude']] for index, row in df.iterrows() if 'Latitude' in df.columns]
+
+if heat_data:
+    HeatMap(heat_data).add_to(m)
+
+# Save map
+m.save("accident_heatmap.html")
+```
+
+---
+
+## 🔹 6. Observations
+
+* Certain regions show higher accident density
+* Urban areas tend to have more accidents
+* Accident hotspots can be clearly identified using heatmaps
+
+---
+
+## 🔹 7. Importance in Project
+
+Geospatial analysis is important because:
+
+* It provides location-based insights
+* It helps in identifying dangerous zones
+* It supports planning of safety measures
+* It enhances visualization through maps
+
+---
+
+## 🔹 8. Conclusion
+
+Geospatial analysis enables visualization of accident data on maps, helping identify high-risk areas. These insights are useful for improving traffic management and enhancing road safety.
