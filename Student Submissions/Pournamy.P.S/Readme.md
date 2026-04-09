@@ -8,36 +8,36 @@ The dataset used is a large-scale road accident dataset containing attributes su
 
 **KPIs Used**
 
-**Total Accidents**: 7,771 recorded incidents.
-**Peak Day**: Friday (2,041 accidents).
-**Top Light Condition**: Daylight.
-**Most Affected Demographic**: Male drivers and those in the 18–30 age group.
-**Primary Education Group**: Junior high school.
-**Most Common Road Surface**: Dry conditions.
-**Most Common Area Type**: Office areas.
+* **Total Accidents:** 7,771 recorded incidents
+* **Peak Day:** Friday (2,041 accidents)
+* **Top Light Condition:** Daylight
+* **Most Affected Demographic:** Male drivers, primarily aged 18–30
+* **Primary Education Group:** Junior high school
+* **Most Common Road Surface:** Dry conditions
+* **Most Common Area Type:** Office areas
 
 **Dashboard Pages**
 
-Overview Dashboard: High-level summary featuring total accidents, distribution by day of the week, gender split, light conditions, and education levels.
-Driver & Condition Deep Dive: Focuses on the relationship between driving experience, age groups, road surface types, and junction types.
+* **Overview Dashboard:** Consolidated view of total accidents, weekday distribution, gender split, lighting conditions, and education levels
+* **Geospatial Analysis:** Interactive map highlighting accident distribution across cities (e.g., Addis Ababa, Semera, Assab)
+* **Driver & Condition Deep Dive:** Analysis of relationships between driving experience, age groups, road surface types, and junction types
 
 **Key Insights**
 
-**Temporal Patterns**: Accidents peak during specific hours of the day (Time Analysis) and are highest on Fridays.
-**Experience Level**: Drivers with "Above 10 years" of experience surprisingly show high accident involvement compared to those with "Below 1yr".
-**Environmental Factors: The vast majority of accidents occur on Dry road surfaces and during Daylight, suggesting that high traffic volume or driver behavior may be bigger factors than poor weather in this dataset.
-**Location Risk**: Office areas and Residential areas are the most frequent sites for collisions.
-**Junction Impact**: Certain junction types show a steep decline in accident frequency compared to the primary "Y-shape" or main intersections.
+* **Temporal Patterns:** Accidents peak during specific hours and are highest on Fridays
+* **Experience Level:** Drivers with over 10 years of experience show unexpectedly high involvement compared to less experienced drivers
+* **Environmental Factors:** Most accidents occur under dry conditions and daylight, indicating traffic density and driver behavior as key contributors
+* **Location Risk:** Office and residential areas account for the highest concentration of accidents
+* **Junction Impact:** Major intersections, particularly Y-shaped junctions, show significantly higher accident frequency
 
 **Recommendations**
 
-**Targeted Youth Safety**: Develop safety campaigns specifically for the 18–30 age group, as they represent the most affected demographic.
-**Urban Infrastructure**: Enhance traffic management in Office and Residential areas where the highest concentration of accidents occurs.
-**Friday Peak Management**: Increase patrol presence or traffic control measures on Fridays to mitigate the weekly spike in incidents.
-**Education-Based Outreach**: Tailor road safety education programs for individuals with a Junior High School education background, as this group is highly represented in the data.
+* **Targeted Youth Safety:** Implement focused safety campaigns for the 18–30 age group
+* **Urban Infrastructure Improvements:** Strengthen traffic management in office and residential zones
+* **Friday Peak Control:** Increase monitoring and traffic regulation measures on Fridays
+* **Education-Based Awareness:** Design road safety programs tailored to individuals with junior high school education levels
 
 **Tools Used**
 
 * Power BI for data visualization, dashboard creation, and analysis
 * Microsoft Excel for data cleaning, preprocessing, and transformation
-
